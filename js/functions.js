@@ -40,3 +40,27 @@ function getIntegers (string) {
 }
 getIntegers(1.5);
 getIntegers('d1sif23pj4afpsjf5')
+
+
+function caluculatingTime (dayStart, dayEnd, meetingStart, meetingDuration) {
+
+  function timeInMinutes (time) {
+    const timeArray = time.split(':');
+    const minutes = timeArray[0] * 60 + +timeArray[1];
+    return minutes;
+  }
+
+  const dayStartMinutes = timeInMinutes (dayStart);
+  const dayEndMinutes = timeInMinutes(dayEnd);
+  const meetingStartMinutes = timeInMinutes(meetingStart);
+
+  const restOfDay = dayEndMinutes - meetingStartMinutes;
+  if ((restOfDay >= meetingDuration) && (dayStartMinutes <= meetingStartMinutes) && (dayEndMinutes >= meetingStartMinutes)) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+
+const result = caluculatingTime('8:00', '17:30', '08:00', 900);
+console.log(result);
