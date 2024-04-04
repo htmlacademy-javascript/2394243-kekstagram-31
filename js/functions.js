@@ -39,16 +39,15 @@ function getIntegers (string) {
   console.log(parseInt(emptyString, 10));
 }
 getIntegers(1.5);
-getIntegers('d1sif23pj4afpsjf5')
+getIntegers('d1sif23pj4afpsjf5');
 
+function timeInMinutes (time) {
+  const timeArray = time.split(':');
+  const minutes = timeArray[0] * 60 + +timeArray[1];
+  return minutes;
+}
 
 function caluculatingTime (dayStart, dayEnd, meetingStart, meetingDuration) {
-
-  function timeInMinutes (time) {
-    const timeArray = time.split(':');
-    const minutes = timeArray[0] * 60 + +timeArray[1];
-    return minutes;
-  }
 
   const dayStartMinutes = timeInMinutes (dayStart);
   const dayEndMinutes = timeInMinutes(dayEnd);
